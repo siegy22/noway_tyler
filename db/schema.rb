@@ -10,8 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 0) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_07_194528) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "role", null: false
+    t.string "riot_id", null: false
+    t.string "summoner_id", null: false
+    t.string "puuid", null: false
+    t.integer "profile_icon_id", null: false
+    t.integer "summoner_level", null: false
+    t.integer "ordering"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
