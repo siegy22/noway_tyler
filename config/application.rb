@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module NowayTyler
   class Application < Rails::Application
+    config.i18n.available_locales = [:en, :de]
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
 

@@ -3,6 +3,14 @@ class Account < ApplicationRecord
   has_many :entries
   has_many :matches
 
+  def wins
+    entries.ordered.first.wins
+  end
+
+  def losses
+    entries.ordered.first.losses
+  end
+
   def winrate
     entries.ordered.first.winrate
   end
@@ -56,5 +64,9 @@ class Account < ApplicationRecord
         started_at: Time.at(riot_match["info"]["gameCreation"] / 1000)
       )
     end
+  end
+
+  def sync_ai_prediction!
+    update!(ai_prediction_finish: AI.instance.predict_finish(self))
   end
 end

@@ -27,7 +27,7 @@
   <div class="flex items-center mt-1">
     <%= image_tag "openai.png", class: "dark:hidden w-10 h-10 p-1" %>
     <%= image_tag "openai_dark.png", class: "dark:block hidden w-10 h-10 p-1" %>
-    <span class="ml-2">AI Prediction: TBD</span>
+    <span class="ml-2">AI Prediction: <%= l account.ai_prediction_finish, locale: 'de', format: :long %></span>
   </div>
   <div class="mt-4">
     <p class="mb-2">Verlauf der letzten 10 Games</p>

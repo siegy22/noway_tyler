@@ -6,4 +6,9 @@ namespace :sync do
       sleep 30
     end
   end
+
+  desc "Sync OpenAI predictions"
+  task openai: [:environment] do
+    Account.all.each(&:sync_ai_prediction!)
+  end
 end
