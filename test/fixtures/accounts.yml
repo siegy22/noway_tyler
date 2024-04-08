@@ -1,15 +1,26 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+top:
+  riot_id: Tolkin#0000
+  role: top
+  summoner_id: sum_top
+  account_id: acc_top
+  puuid: puuid_top
+  profile_icon_id: 45
+  summoner_level: 35
 
-one:
-  summoner_id: MyString
-  account_id: MyString
-  puuid: MyString
-  profile_icon_id: 1
-  summoner_level: 1
+mid:
+  riot_id: Noway#0000
+  role: mid
+  summoner_id: sum_mid
+  account_id: acc_mid
+  puuid: puuid_mid
+  profile_icon_id: 1002
+  summoner_level: 36
 
-two:
-  summoner_id: MyString
-  account_id: MyString
-  puuid: MyString
-  profile_icon_id: 1
-  summoner_level: 1
+adc:
+  riot_id: Broeki#0000
+  role: adc
+  summoner_id: sum_adc
+  account_id: acc_adc
+  puuid: puuid_adc
+  profile_icon_id: 29
+  summoner_level: 34

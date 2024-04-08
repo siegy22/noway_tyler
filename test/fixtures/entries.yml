@@ -1,0 +1,23 @@
+top_one:
+  account: top
+  tier: DIAMOND
+  rank: IV
+  league_points: 20
+  wins: 100
+  losses: 80
+
+mid_one:
+  account: mid
+  tier: DIAMOND
+  rank: I
+  league_points: 75
+  wins: 100
+  losses: 80
+
+adc_one:
+  account: adc
+  tier: Master
+  rank: I
+  league_points: 120
+  wins: 100
+  losses: 80
