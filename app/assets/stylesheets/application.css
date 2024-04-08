@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+.pswp img {
+  max-width: none;
+  object-fit: contain;
+}

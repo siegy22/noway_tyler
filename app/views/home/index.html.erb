@@ -1,9 +1,12 @@
 <h1 class="text-8xl font-bold text-center mb-12 text-[#80cbab] dark:text-[#abf5d7] drop-shadow" style="font-family: Calgary;">Tyler 0,6 Challenge</h1>
 <!-- Accounts and Ranks Section -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="egg">
   <!-- Account: Top -->
   <div class="bg-white dark:bg-gray-700 shadow-lg rounded-lg p-6">
-    <img class="m-auto rounded-full w-20 h-20" src="https://ddragon.leagueoflegends.com/cdn/14.6.1/img/profileicon/29.png">
+    <%= link_to image_url("nno/top_2.jpg"), target: '_blank' do  %>
+      <%= image_tag "nno/top.jpg", class: "m-auto rounded-full w-20 h-20 hidden", 'data-nno': true %>
+    <% end %>
+    <img class="m-auto rounded-full w-20 h-20" data-real="true" src="https://ddragon.leagueoflegends.com/cdn/14.6.1/img/profileicon/29.png">
     <h2 class="text-xl font-semibold">Top Account</h2>
     <p>Current Rank: Platinum II</p>
     <p>Winrate: 60%</p>
@@ -16,7 +19,10 @@
 
   <!-- Account: Mid -->
   <div class="bg-white dark:bg-gray-700 shadow-lg rounded-lg p-6">
-    <img class="m-auto rounded-full w-20 h-20" src="https://ddragon.leagueoflegends.com/cdn/14.6.1/img/profileicon/29.png">
+    <%= link_to image_url("nno/mid_2.jpg"), target: '_blank' do  %>
+      <%= image_tag "nno/mid.jpg", class: "m-auto rounded-full w-20 h-20 hidden", 'data-nno': true %>
+    <% end %>
+    <img class="m-auto rounded-full w-20 h-20" data-real="true" src="https://ddragon.leagueoflegends.com/cdn/14.6.1/img/profileicon/29.png">
     <h2 class="text-xl font-semibold">Mid Account</h2>
     <p>Current Rank: Diamond IV</p>
     <p>Winrate: 65%</p>
@@ -29,7 +35,10 @@
 
   <!-- Account: ADC -->
   <div class="bg-white dark:bg-gray-700 shadow-lg rounded-lg p-6">
-    <img class="m-auto rounded-full w-20 h-20" src="https://ddragon.leagueoflegends.com/cdn/14.6.1/img/profileicon/29.png">
+    <%= link_to image_url("nno/adc_2.jpg"), target: '_blank' do  %>
+      <%= image_tag "nno/adc.jpg", class: "m-auto rounded-full w-20 h-20 hidden", 'data-nno': true %>
+    <% end %>
+    <img class="m-auto rounded-full w-20 h-20" data-real="true" src="https://ddragon.leagueoflegends.com/cdn/14.6.1/img/profileicon/29.png">
     <h2 class="text-xl font-semibold">ADC Account</h2>
     <p>Current Rank: Diamond I</p>
     <p>Winrate: 70%</p>
@@ -40,4 +49,3 @@
     </div>
   </div>
 </div>
-
