@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  win: false
+  started_at: 2024-04-08 18:09:10
+  role: MyString
+
+two:
+  win: false
+  started_at: 2024-04-08 18:09:10
+  role: MyString

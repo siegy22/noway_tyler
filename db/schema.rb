@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_08_124716) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_08_160910) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,5 +38,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_08_124716) do
     t.index ["account_id"], name: "index_entries_on_account_id"
   end
 
+  create_table "matches", force: :cascade do |t|
+    t.bigint "account_id", null: false
+    t.string "riot_id", null: false
+    t.string "role", null: false
+    t.boolean "win", null: false
+    t.datetime "started_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_matches_on_account_id"
+  end
+
   add_foreign_key "entries", "accounts"
+  add_foreign_key "matches", "accounts"
 end

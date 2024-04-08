@@ -12,7 +12,7 @@
       <%= content_tag :div, "", class: 'bg-red-500 rounded-r-full', style: "width: #{account.lossrate}%" %>
     </div>
     <div class="absolute inset-0 flex items-center justify-center font-bold text-white text-sm">
-      <span><%= account.winrate %>%</span>
+      <span><%= account.winrate %>% Winrate</span>
     </div>
   </div>
   <div class="flex items-center mt-2">
@@ -22,12 +22,12 @@
   <div class="flex items-center my-1">
     <%= image_tag "target.png", class: "dark:hidden w-10 h-10 p-1" %>
     <%= image_tag "target_dark.png", class: "dark:block hidden w-10 h-10 p-1" %>
-    <span class="ml-2">Rolle gespielt: 95%</span>
+    <span class="ml-2">Rolle gespielt: <%= account.role_hitrate %>% (<%= account.role_miss_count %> Autofill)</span>
   </div>
   <div class="flex items-center mt-1">
     <%= image_tag "openai.png", class: "dark:hidden w-10 h-10 p-1" %>
     <%= image_tag "openai_dark.png", class: "dark:block hidden w-10 h-10 p-1" %>
-    <span class="ml-2">AI Prediction: 20. Juli 2024</span>
+    <span class="ml-2">AI Prediction: TBD</span>
   </div>
   <div class="mt-4">
     <p class="mb-2">Verlauf der letzten 10 Games</p>

@@ -21,16 +21,16 @@ class RiotApiClient
     res.find { |i| i['queueType'] == 'RANKED_SOLO_5x5' }
   end
 
-  def match_ids(queue: 420)
+  def match_ids(puuid, since, queue: 420)
     start = 0
     responses = []
     loop do
       response = self.class.get(
-        "#{RIOT_EUW1_API_URL}/lol/match/v5/matches/by-puuid/#{puuid}/ids",
+        "#{RIOT_EUROPE_API_URL}/lol/match/v5/matches/by-puuid/#{puuid}/ids",
         query: {
           count: 100,
           queue: queue,
-          startTime: start_time,
+          startTime: since.to_i,
           start: start
         }
       )
@@ -45,11 +45,11 @@ class RiotApiClient
   end
 
   def match(id)
-    self.class.get("#{RIOT_EUW1_API_URL}/lol/match/v5/matches/#{id}")
+    self.class.get("#{RIOT_EUROPE_API_URL}/lol/match/v5/matches/#{id}")
   end
 
-  private
-  def puuid
-    Rails.application.config.noway_puuid
+  def matches(puuid, since:)
+    ids = match_ids(puuid, since)
+    ids.map { |id| match(id) }
   end
 end
