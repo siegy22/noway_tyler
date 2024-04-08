@@ -1,4 +1,4 @@
-riot = RiotApiClient.new
+riot = RiotApiClient.instance
 
 [
   { riot_id: 'Tolkin4U#T06', role: 'top' },
@@ -17,4 +17,5 @@ riot = RiotApiClient.new
     profile_icon_id: summoner['profileIconId'],
     summoner_level: summoner['summonerLevel'],
   )
+  account.sync_entry!
 end

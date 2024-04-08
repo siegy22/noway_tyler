@@ -1,7 +1,8 @@
 class RiotApiClient
+  include Singleton
+  include HTTParty
   RIOT_EUROPE_API_URL = 'https://europe.api.riotgames.com'.freeze
   RIOT_EUW1_API_URL = 'https://euw1.api.riotgames.com'.freeze
-  include HTTParty
   raise_on (400..504).to_a
 
   headers 'X-Riot-Token' => Rails.application.credentials.api_key
@@ -13,6 +14,11 @@ class RiotApiClient
 
   def summoner_by_puuid(puuid)
     self.class.get("#{RIOT_EUW1_API_URL}/lol/summoner/v4/summoners/by-puuid/#{puuid}")
+  end
+
+  def entry_by_summoner(summoner_id)
+    res = self.class.get("#{RIOT_EUW1_API_URL}/lol/league/v4/entries/by-summoner/#{summoner_id}")
+    res.find { |i| i['queueType'] == 'RANKED_SOLO_5x5' }
   end
 
   def match_ids(queue: 420)
