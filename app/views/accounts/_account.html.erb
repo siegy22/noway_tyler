@@ -3,10 +3,14 @@
     <%= image_tag "nno/#{account.role}.jpg", class: "m-auto rounded-full w-20 h-20 hidden", 'data-nno': true %>
   <% end %>
   <%= image_tag "https://ddragon.leagueoflegends.com/cdn/14.6.1/img/profileicon/#{account.profile_icon_id}.png", class: 'm-auto rounded-full w-20 h-20', 'data-real': true  %>
-  <div class="w-full text-center mb-2 mt-1">
+  <div class="w-full text-center mb-1 mt-1">
     <%= link_to account.riot_id, account.opgg_url, class: 'text-xl font-semibold', target: '_blank' %>
   </div>
-  <div class="relative w-full bg-gray-200 rounded-full h-5 dark:bg-gray-700">
+  <div class="flex items-center justify-center">
+    <%= image_tag "ranks/#{account.tier.downcase}.png", class: "w-16 h-16" %>
+    <span class="ml-2"><%= account.rank_label %> (<%= account.lp %>LP)</span>
+  </div>
+  <div class="relative w-full bg-gray-200 rounded-full h-5 dark:bg-gray-700 mb-3">
     <div class="flex h-5">
       <%= content_tag :div, "", class: 'bg-blue-500 rounded-l-full', style: "width: #{account.winrate}%" %>
       <%= content_tag :div, "", class: 'bg-red-500 rounded-r-full', style: "width: #{account.lossrate}%" %>
@@ -15,19 +19,15 @@
       <span><%= account.winrate %>% Winrate</span>
     </div>
   </div>
-  <div class="flex items-center mt-2">
-    <%= image_tag "ranks/#{account.tier.downcase}.png", class: "w-10 h-10" %>
-    <span class="ml-2"><%= account.rank_label %> (<%= account.lp %>LP)</span>
-  </div>
-  <div class="flex items-center my-1">
-    <%= image_tag "target.png", class: "dark:hidden w-10 h-10 p-1" %>
-    <%= image_tag "target_dark.png", class: "dark:block hidden w-10 h-10 p-1" %>
-    <span class="ml-2">Rolle gespielt: <%= account.role_hitrate %>% (<%= account.role_miss_count %> Autofill)</span>
+  <div class="flex items-center my-1 mb-2">
+    <%= image_tag "target.png", class: "dark:hidden w-10 h-6 object-contain" %>
+    <%= image_tag "target_dark.png", class: "dark:block hidden w-10 h-10 p-3" %>
+    <span class="ml-2 text-sm">Rolle gespielt: <%= account.role_hitrate %>% (<%= account.role_miss_count %> Autofill)</span>
   </div>
   <div class="flex items-center mt-1">
-    <%= image_tag "openai.png", class: "dark:hidden w-10 h-10 p-1" %>
+    <%= image_tag "openai.png", class: "dark:hidden w-10 h-6 object-contain" %>
     <%= image_tag "openai_dark.png", class: "dark:block hidden w-10 h-10 p-1" %>
-    <span class="ml-2">AI Prediction: <%= l account.ai_prediction_finish, locale: 'de', format: :long %></span>
+    <span class="ml-2 text-sm">AI Prediction: <%= l account.ai_prediction_finish, locale: 'de', format: :long %></span>
   </div>
   <div class="mt-4">
     <p class="mb-2">Verlauf der letzten 10 Games</p>
