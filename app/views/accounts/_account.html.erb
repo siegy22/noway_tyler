@@ -20,14 +20,22 @@
     </div>
   </div>
   <div class="flex items-center my-1 mb-2">
-    <%= image_tag "target.png", class: "dark:hidden w-10 h-6 object-contain" %>
-    <%= image_tag "target_dark.png", class: "dark:block hidden w-10 h-10 p-3" %>
-    <span class="ml-2 text-sm">Rolle gespielt: <%= account.role_hitrate %>% (<%= account.role_miss_count %> Autofill)</span>
+    <span class="w-10 h-6 text-center">
+      <i class="fa-solid fa-gamepad"></i>
+    </span>
+    <span class="ml-1 text-sm">Anzahl Games: <%= account.wins + account.losses %></span>
   </div>
-  <div class="flex items-center mt-1">
-    <%= image_tag "openai.png", class: "dark:hidden w-10 h-6 object-contain" %>
-    <%= image_tag "openai_dark.png", class: "dark:block hidden w-10 h-10 p-1" %>
-    <span class="ml-2 text-sm">AI Prediction: <%= l account.ai_prediction_finish, locale: 'de', format: :long %></span>
+  <div class="flex items-center my-1 mb-2">
+    <span class="w-10 h-6 text-center">
+      <i class="fa-solid fa-crosshairs"></i>
+    </span>
+    <span class="ml-1 text-sm">Rolle gespielt: <%= account.role_hitrate %>% (<%= account.role_miss_count %> Autofill)</span>
+  </div>
+  <div class="flex items-center my-1 mb-2">
+    <span class="w-10 h-6 text-center">
+      <i class="fa-brands fa-think-peaks"></i>
+    </span>
+    <span class="ml-1 text-sm">AI Prediction: <%= l account.ai_prediction_finish, locale: 'de', format: :long %></span>
   </div>
   <div class="mt-4">
     <p class="mb-2">Verlauf der letzten 10 Games</p>
