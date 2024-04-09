@@ -47,8 +47,8 @@ class Account < ApplicationRecord
 
   def sync_entry!
     riot_entry = RiotApiClient.instance.entry_by_summoner(summoner_id)
-    entry = entries.find_or_create_by!(riot_entry.slice('wins', 'losses'))
-    entry.update!(rank: riot_entry['rank'], tier: riot_entry['tier'], league_points: riot_entry['leaguePoints'])
+    entry = entries.find_or_create_by!(riot_entry.slice('wins', 'losses', 'rank', 'tier'))
+    entry.update!(league_points: riot_entry['leaguePoints'])
   end
 
   def sync_matches!
