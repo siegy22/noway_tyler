@@ -9,7 +9,7 @@ class AI
     result = @client.chat(
       parameters: {
         model: "gpt-4",
-        temperature: 0.3,
+        temperature: 0.8,
         messages: [
           {
             "role": "system",
@@ -24,11 +24,11 @@ Total Wins: #{account.wins}
 Total Losses: #{account.losses}
 Current Rank: #{account.rank_label} (#{account.lp}LP)
 Date of Request: #{Date.today}
-Average Game Duration: 40
-Role-Specific Performance: least played role
-Recent Trend in Performance: 80% winrate over the last 20 games
-Champion Pool Focus: Playing a diverse pool of champions (focusing on top 3 ADC champions)
-External Factors: None
+Average Game Duration: 50 Minutes
+Role-Specific Performance: #{account.ai_role_specific_performance}
+Recent Trend in Performance: 60% winrate over the last 20 games
+Champion Pool Focus: Playing a diverse pool of champions
+External Factors: Doing winchallenges about once a week. Also having one off day per week.
 PROMPT
           }
         ]

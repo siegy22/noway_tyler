@@ -69,4 +69,17 @@ class Account < ApplicationRecord
   def sync_ai_prediction!
     update!(ai_prediction_finish: AI.instance.predict_finish(self))
   end
+
+  def ai_role_specific_performance
+    case role
+    when "top"
+      "Played top before, but not toplane main"
+    when "mid"
+      "Hit challenger almost every season in midlane"
+    when "adc"
+      "Rarely played, weakest role"
+    else
+      "Unkown"
+    end
+  end
 end
