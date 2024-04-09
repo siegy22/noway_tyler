@@ -1,6 +1,12 @@
-<h1 class="text-8xl font-bold text-center mb-12 text-[#80cbab] dark:text-[#abf5d7] drop-shadow" style="font-family: Calgary;">Tyler 0,6 Challenge</h1>
+<h1 class="text-8xl font-bold text-center text-[#80cbab] dark:text-[#abf5d7] drop-shadow" style="font-family: Calgary;">Tyler 0,6 Challenge</h1>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="egg">
+<!-- Force tailwind to add dynamic background color classes used by thresholds -->
+<div class="hidden bg-[#7DE3F5] bg-[#F4BA66]"></div>
+<div class="flex flex-col">
+  <%= render Info.challenger_threshold %>
+  <%= render Info.grandmaster_threshold, additional_classes: 'ml-3' %>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10" id="egg">
   <% Account.order(role: :desc).each do |account| %>
     <%= render account %>
   <% end %>

@@ -7,6 +7,12 @@ class RiotApiClient
 
   headers 'X-Riot-Token' => Rails.application.credentials.api_key
 
+  def rank_threshold(rank: ,queue: 'RANKED_SOLO_5x5')
+    res = self.class.get("#{RIOT_EUW1_API_URL}/lol/league/v4/#{rank}leagues/by-queue/#{queue}")
+    lp = res['entries'].map { |entry| entry['leaguePoints'] }.min
+    "#{lp}LP"
+  end
+
   def account_by_riot_id(riot_id)
     name, tag_line = riot_id.split('#')
     self.class.get("#{RIOT_EUROPE_API_URL}/riot/account/v1/accounts/by-riot-id/#{name}/#{tag_line}")

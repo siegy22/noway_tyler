@@ -29,3 +29,10 @@
 
 en:
   hello: "Hello world"
+  thresholds:
+    labels:
+      grandmaster_threshold: für Grandmaster
+      challenger_threshold: für Challenger
+    colors:
+      grandmaster_threshold: '#F4BA66'
+      challenger_threshold: '#7DE3F5'

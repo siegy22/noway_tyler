@@ -1,0 +1,10 @@
+<% additional_classes ||= '' %>
+<div class="flex items-center justify-center py-2">
+  <div class="<%= additional_classes %> max-w-40 w-full bg-[<%= t("thresholds.colors.#{info.name}") %>] h-0.5 mr-4"></div>
+  <div class="flex items-center">
+    <%= image_tag "ranks/#{info.name.gsub('_threshold', '')}.png", class: "w-4 h-4 mr-1" %>
+    <span class="text-gray-800 dark:text-gray-200">
+      <%= info.value %> <%= t("thresholds.labels.#{info.name}") %>
+    </span>
+  </div>
+</div>
