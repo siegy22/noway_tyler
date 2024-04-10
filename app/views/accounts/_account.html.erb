@@ -39,6 +39,13 @@
   </div>
   <div class="mt-4">
     <p class="mb-2">Verlauf der letzten 10 Games</p>
-    <div class="h-32 bg-gray-200 dark:bg-gray-600 rounded-md"></div>
+    <div class="h-46 bg-gray-200 dark:bg-gray-600 rounded-md p-4"
+         data-controller="stats"
+         data-stats-points-value="<%= account.entries.ordered.limit(10).reverse.map(&:total_points).to_json %>"
+         data-stats-gmthreshold-value="<%= Info.grandmaster_threshold.value.to_i %>"
+         data-stats-challthreshold-value="<%= Info.challenger_threshold.value.to_i %>"
+    >
+      <canvas data-stats-target="canvas"></canvas>
+    </div>
   </div>
 </div>
