@@ -245,6 +245,12 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sentry-rails (5.17.2)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.17.2)
+    sentry-ruby (5.17.2)
+      bigdecimal
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -314,6 +320,8 @@ DEPENDENCIES
   ruby-openai
   sass-rails
   selenium-webdriver
+  sentry-rails
+  sentry-ruby
   sprockets-rails
   stimulus-rails
   tailwindcss-rails
