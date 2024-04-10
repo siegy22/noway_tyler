@@ -18,4 +18,8 @@ riot = RiotApiClient.instance
     summoner_level: summoner['summonerLevel'],
   )
   account.sync_entry!
+  account.sync_ai_prediction!
+  account.sync_matches!
 end
+
+Info.sync_thresholds!
