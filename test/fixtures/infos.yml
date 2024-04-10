@@ -1,9 +1,7 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+grandmaster_threshold:
+  name: grandmaster_threshold
+  value: 420LP
 
-one:
-  name: MyString
-  value: MyString
-
-two:
-  name: MyString
-  value: MyString
+challenger_threshold:
+  name: challenger_threshold
+  value: 666LP

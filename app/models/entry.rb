@@ -19,4 +19,17 @@ class Entry < ApplicationRecord
 
     "#{tier.capitalize} #{rank}"
   end
+
+  # Creates point system across ranks, only respects Diamond and up.
+  def total_points
+    return 0 unless (RANKLESS_TIERS + ["diamond"]).include?(tier.downcase)
+    return 400 + league_points if RANKLESS_TIERS.include?(tier.downcase)
+
+    {
+      'IV' => 0,
+      'III' => 1,
+      'II' => 2,
+      'I' => 3,
+    }[rank] * 100 + league_points
+  end
 end
