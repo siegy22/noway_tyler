@@ -14,8 +14,25 @@
   </head>
 
   <body class="flex justify-center bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
-    <div class="container px-4 py-8 md:pt-24">
+    <div class="container p-4">
+      <div class="flex flex-row max-w-4xl mx-auto">
+        <a href="https://twitch.tv/noway4u_sir" target="_blank" class="flex items-center">
+          <i class="fa-brands fa-twitch mr-1"></i> <span class="uppercase">Twitch</span>
+        </a>
+        <span class="mx-2">|</span>
+        <a href="https://twitch.tv/noway4u_sir" target="_blank" class="flex items-center">
+          <span class="uppercase">Impressum,&nbsp;</span>
+        </a>
+        <a href="https://www.noway.gg/privacy" target="_blank" class="flex items-center">
+          <span class="uppercase">Datenschutz</span>
+        </a>
+      </div>
+
       <%= yield %>
+
+      <footer class="max-w-4xl w-full mx-auto text-center mt-12 text-xs">
+        Bug reports via Discord an <a href="discord://-/channels/@me/275288704497745920" class="text-blue-500">@aimaard</a>.<br><i class="fa-brands fa-github"></i> <a href="https://github.com/siegy22/noway_tyler" target="_blank">siegy22/noway_tyler</a>
+      </footer>
     </div>
   </body>
 </html>
