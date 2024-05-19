@@ -47,6 +47,8 @@ class Account < ApplicationRecord
 
   def sync_entry!
     riot_entry = RiotApiClient.instance.entry_by_summoner(summoner_id)
+    # If there are no games played, this will return nil (happened due to ranked split reset)
+    return unless riot_entry
     entry = entries.find_or_create_by!(riot_entry.slice('wins', 'losses', 'rank', 'tier'))
     entry.update!(league_points: riot_entry['leaguePoints'])
   end
